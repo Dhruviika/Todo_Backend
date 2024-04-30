@@ -6,9 +6,7 @@ const router = express.Router();
 const prisma = new PrismaClient();
 
 router.post("/", async (req, res) => {
-  const name = req.headers["name"] as string;
-  const username = req.headers["username"] as string;
-  const password = req.headers["password"] as string;
+  const { name, username, password } = req.body;
 
   await prisma.user.create({
     data: {
@@ -21,8 +19,7 @@ router.post("/", async (req, res) => {
 });
 
 router.get("/", async (req, res) => {
-  const username = req.headers["username"] as string;
-  const password = req.headers["password"] as string;
+  const { username, password } = req.body;
   const user = await prisma.user.findUnique({
     where: {
       username,

@@ -5,8 +5,7 @@ const router = express.Router();
 const prisma = new PrismaClient();
 
 router.post("/", async (req, res) => {
-  const userId = parseInt(req.query.userId as string);
-  const description = req.query.description as string;
+  const { userId, description } = req.body;
   await prisma.todo.create({
     data: {
       userId,
