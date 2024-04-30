@@ -1,5 +1,6 @@
 import express from "express";
 import todoRoutes from "./Todo";
+import userRoutes from "./User";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -12,6 +13,7 @@ app.get("/", async (req, res) => {
 app.use(express.json());
 
 // Routes
+app.use("/users", userRoutes);
 app.use("/todos", todoRoutes);
 
 // Start the server
