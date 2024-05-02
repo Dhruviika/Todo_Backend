@@ -1,6 +1,7 @@
 import express from "express";
 import todoRoutes from "./Todo";
 import userRoutes from "./User";
+import cors from "cors";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -11,6 +12,7 @@ app.get("/", async (req, res) => {
 
 // Middleware
 app.use(express.json());
+app.use(cors());
 
 // Routes
 app.use("/users", userRoutes);
