@@ -1,5 +1,4 @@
 import { PrismaClient } from "@prisma/client";
-import { fi } from "date-fns/locale";
 import express from "express";
 
 const router = express.Router();
@@ -81,15 +80,5 @@ router.get("/:id", async (req, res) => {
   }
   res.json(user);
 });
-
-// async function updateUser(username: string, firstName: string) {
-//   const res = await prisma.user.update({
-//     where: { username },
-//     data: {
-//       firstName,
-//     },
-//   });
-//   console.log(res);
-// }
 
 export default router;
