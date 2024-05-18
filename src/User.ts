@@ -1,5 +1,4 @@
 import { PrismaClient } from "@prisma/client";
-import { fi } from "date-fns/locale";
 import express from "express";
 
 const router = express.Router();
