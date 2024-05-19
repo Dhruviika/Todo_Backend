@@ -1,5 +1,8 @@
 import { PrismaClient } from "@prisma/client";
+<<<<<<< HEAD
 import { fetchUser } from "./middlewares/fetchUser";
+=======
+>>>>>>> 67324ec07248a24b4b078175bc4d8db2e690bf2a
 import express from "express";
 var bcrypt = require("bcryptjs");
 var jwt = require("jsonwebtoken");
@@ -114,15 +117,5 @@ router.get("/me", fetchUser, async (req, res) => {
   }
   res.json({ user, success: true });
 });
-
-// async function updateUser(username: string, firstName: string) {
-//   const res = await prisma.user.update({
-//     where: { username },
-//     data: {
-//       firstName,
-//     },
-//   });
-//   console.log(res);
-// }
 
 export default router;
