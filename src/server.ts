@@ -14,6 +14,8 @@ app.get("/", async (req, res) => {
 app.use(express.json());
 app.use(cors());
 
+require("dotenv").config();
+
 // Routes
 app.use("/users", userRoutes);
 app.use("/todos", todoRoutes);
