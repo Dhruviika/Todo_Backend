@@ -1,8 +1,5 @@
 import { PrismaClient } from "@prisma/client";
-<<<<<<< HEAD
 import { fetchUser } from "./middlewares/fetchUser";
-=======
->>>>>>> 67324ec07248a24b4b078175bc4d8db2e690bf2a
 import express from "express";
 var bcrypt = require("bcryptjs");
 var jwt = require("jsonwebtoken");
