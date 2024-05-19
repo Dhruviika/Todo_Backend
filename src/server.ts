@@ -6,6 +6,8 @@ import cors from "cors";
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+require("dotenv").config();
+
 app.get("/", async (req, res) => {
   res.send("Backend Running");
 });
@@ -13,8 +15,6 @@ app.get("/", async (req, res) => {
 // Middleware
 app.use(express.json());
 app.use(cors());
-
-require("dotenv").config();
 
 // Routes
 app.use("/users", userRoutes);
