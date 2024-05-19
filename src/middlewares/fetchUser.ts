@@ -1,7 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 
 var jwt = require("jsonwebtoken");
-const jwtSecret = process.env.JWT_SECRET;
 
 declare global {
   namespace Express {
@@ -19,7 +18,7 @@ export const fetchUser = (req: Request, res: Response, next: NextFunction) => {
     res.status(401).send({ error: "Please authenticate using a valid token" });
   }
   try {
-    const data = jwt.verify(token, jwtSecret);
+    const data = jwt.verify(token, "kay123");
     req.user = data.user;
     next();
   } catch (error) {

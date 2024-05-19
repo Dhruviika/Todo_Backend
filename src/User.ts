@@ -3,7 +3,6 @@ import { fetchUser } from "./middlewares/fetchUser";
 import express from "express";
 var bcrypt = require("bcryptjs");
 var jwt = require("jsonwebtoken");
-const jwtSecret = process.env.JWT_SECRET;
 
 const router = express.Router();
 const prisma = new PrismaClient();
@@ -42,7 +41,7 @@ router.post("/signup", async (req, res) => {
     },
   };
 
-  const token = jwt.sign(data, jwtSecret, { expiresIn: "1h" });
+  const token = jwt.sign(data, "kay123", { expiresIn: "1h" });
 
   res.json({ token: token, success: true });
 
@@ -83,7 +82,7 @@ router.post("/login", async (req, res) => {
     },
   };
 
-  const token = jwt.sign(data, jwtSecret, { expiresIn: "1h" });
+  const token = jwt.sign(data, "kay123", { expiresIn: "1h" });
 
   res.json({ token: token, success: true });
 });

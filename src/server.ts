@@ -6,8 +6,6 @@ import cors from "cors";
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-require("dotenv").config();
-
 app.get("/", async (req, res) => {
   res.send("Backend Running");
 });
